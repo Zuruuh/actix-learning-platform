@@ -1,0 +1,14 @@
+services:
+  database:
+    image: postgres:16-alpine
+    volumes:
+      - db-data:/var/lib/postgresql/data:rw
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: actix_learning_platform
+    ports:
+      - "5432:5432"
+
+volumes:
+  db-data:
